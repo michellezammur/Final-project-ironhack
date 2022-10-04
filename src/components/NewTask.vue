@@ -54,7 +54,10 @@
 <script setup>
 import { ref } from "vue";
 import { supabase } from "../supabase";
-import { useTaskStore } from "../stores/task.js";
+import { useTaskStore } from "../stores/task";
+
+
+// constant to save a variable that define the custom event that will be emitted to the homeView
 
 const emit = defineEmits(["childNewTask"]);
 
@@ -78,13 +81,11 @@ function uploadTask() {
   }
 }
 
-
-
-
-
-// constant to save a variable that define the custom event that will be emitted to the homeView
-
 // constant to save a variable that holds the value of the title input field of the new task
+
+const newTask = () => {
+  
+}
 
 // constant to save a variable that holds the value of the description input field of the new task
 

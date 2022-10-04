@@ -84,3 +84,7 @@ Lil Supa
 
 "Comence a crear el componente "NewTask.vue", le he añadido estilo con Tailwind, pero tengo problemas con centrar el icono "TASK", he intentado varias formas pero aun no lo logro."
 
+18h:
+
+"Tengo estructurado el NewTask.vue, mañana comenzare a añadirle logica y a crear la intereccion para añadir una nueva tarea."
+

@@ -1,6 +1,7 @@
 <template>
 <Nav />
 <NewTask />
+<Footer />
 
 
   <!-- <div id="flexbox">
@@ -39,6 +40,7 @@ import Nav from "../components/Nav.vue";
 
 import { useUserStore } from "@/stores/user.js";
 import NewTask from "../components/NewTask.vue";
+import Footer from "../components/Footer.vue";
 let userName = ref(useUserStore().user.email);
 
 // nos definimos la tienda del usuario dentro de una constante
