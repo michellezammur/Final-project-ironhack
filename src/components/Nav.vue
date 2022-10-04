@@ -1,0 +1,65 @@
+<template>
+  <nav
+    class="bg-white border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800"
+  >
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <!-- logo -->
+      <a
+        href="/"
+        class="router-link-active router-link-exact-active flex items-center"
+      >
+        <img :src="logo" class="mr-3 h-6 sm:h-9" alt="" />
+      </a>
+      <div class="hidden w-full md:block md:w-auto">
+        <ul
+          class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+        >
+          <li class="flex items-center justify-center">
+            <p
+              href="#"
+              class="text-center block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 dark:text-white"
+            >
+              Welcome Back <span class="font-bold">{{ userNameClean }}</span>
+            </p>
+          </li>
+          <li class="flex justify-center pt-4 md:pt-0">
+            <button
+              class="ml-8 inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-800 hover:bg-green-700 font-medium focus:ring-2 focus:ring-green-800 focus:ring-opacity-50 rounded-md"
+              @click="signOut()"
+            >
+              Log out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script setup>
+// constant to save a variable that will get the user from store with a computed function imported from vue
+import { ref, computed } from "vue";
+// constant that calls user email from the useUSerStore
+import { useUserStore } from "../stores/user.js";
+//constant to save a variable that will hold the use router method
+import { useRouter } from "vue-router";
+
+const redirect = useRouter();
+
+// constant that saves the user email and cleans out the @client from the user
+// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
+const signOut = async () => {
+  await useUserStore().signOut();
+  redirect.push({ path: "/auth/login" });
+};
+
+// logo de la pagina
+const logo =
+  "https://res.cloudinary.com/dnsnkrcru/image/upload/v1648481844/taskApp/imgs/logo-small_bh8xj2.svg";
+
+// user de la tienda
+let userName = useUserStore().user.email;
+let userNameClean = userName.split("@")[0];
+</script>
+
+<style scoped></style>
