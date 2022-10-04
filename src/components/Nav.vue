@@ -10,21 +10,23 @@
       >
         <img :src="logo" class="mr-3 h-6 sm:h-9" alt="" />
       </a>
+     
       <div class="hidden w-full md:block md:w-auto">
         <ul
           class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
         >
+
           <li class="flex items-center justify-center">
             <p
               href="#"
-              class="text-center block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 dark:text-white"
+              class="text-center block py-2 pr-4 pl-3 text-gray-700 rounded md:bg-transparent md:p-0 dark:text-white" 
             >
-              Welcome Back <span class="font-bold">{{ userNameClean }}</span>
+              Welcome Back &#128521; <span class="font-bold">{{ userNameClean }}</span>
             </p>
           </li>
           <li class="flex justify-center pt-4 md:pt-0">
             <button
-              class="ml-8 inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-800 hover:bg-green-700 font-medium focus:ring-2 focus:ring-green-800 focus:ring-opacity-50 rounded-md"
+              class="ml-8 inline-block py-2 px-4 text-sm leading-5 text-white bg-violet-400 focus:ring-violet-300 focus:ring-opacity-50 rounded-md"
               @click="signOut()"
             >
               Log out
@@ -55,7 +57,7 @@ const signOut = async () => {
 
 // logo de la pagina
 const logo =
-  "https://res.cloudinary.com/dnsnkrcru/image/upload/v1648481844/taskApp/imgs/logo-small_bh8xj2.svg";
+  "https://i.pinimg.com/originals/1b/37/a3/1b37a31607ae30bf0fd3cf73f6009447.png";
 
 // user de la tienda
 let userName = useUserStore().user.email;

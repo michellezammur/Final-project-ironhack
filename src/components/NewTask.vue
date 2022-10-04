@@ -1,25 +1,53 @@
 <template>
-  <div>
-    <h2>Create task</h2>
-    <br />
-    <input
-      v-model="taskTitle"
-      type="text"
-      id="newTaskTitle"
-      placeholder="Title"
-    /><br /><br />
+  <div class="pt-12 pb-24 bg-pink-50">
+    <div class="container px-auto mx-auto">
+      <span
+        class="inline-block px-3 mb-4 text-xs leading-5 text-violet-500 bg-violet-100 font-medium rounded-full"
+        >TASK</span
+      >
+      <h2
+        class="text-center mb-4 text-4xl md:text-5xl leading-tight text-black font-bold tracking-tighter"
+      >
+        Add a new Task
+      </h2>
+      <p class="text-center text-lg md:text-xl text-gray-800 font-medium">
+        Keep your life organized, prepare for a trip? Start here
+      </p>
+      <p class="text-center mb-10 text-lg text-gray-800 font-medium">
+        Today's Date is Oct 4th 2022
+      </p>
+    </div>
 
-    <input
-      v-model="taskDesc"
-      type="text"
-      id="newTaskDesc"
-      placeholder="Description"
-    /><br /><br />
+    <div class="container px-auto mx-auto">
+      <div class="flex flex-col px-24">
+        <input
+          class="inline-block py-2 px-4 text-sm leading-6 focus:ring-opacity-50 rounded-md"
+          v-model="taskTitle"
+          type="text"
+          id="newTaskTitle"
+          placeholder="Add a Task Title"
+        /><br /><br />
 
-    <button @click.prevent="uploadTask">Create</button>
-  </div>
-  <div>
-    <h3 v-if="errorBool">{{ emptyString }}</h3>
+        <input
+          class="inline-block py-2 px-4 text-sm leading-6 focus:ring-opacity-50 rounded-md"
+          v-model="taskDesc"
+          type="text"
+          id="newTaskDesc"
+          placeholder="Add a Task Description"
+        /><br /><br />
+
+        <button
+          class="inline-block py-2 px-4 text-sm leading-5 text-white bg-violet-400 focus:ring-violet-300 focus:ring-opacity-50 rounded-md"
+          @click.prevent="uploadTask"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h3 v-if="errorBool">{{ emptyString }}</h3>
+    </div>
   </div>
 </template>
 
@@ -50,16 +78,9 @@ function uploadTask() {
   }
 }
 
-// async function uploadTask() {
-//   const { data, error } = await supabase.from("tasks").insert([
-//     {
-//       user_id: "5fa3d22c-892b-44fc-a3a6-efc7e5503032",
-//       title: taskTitle.value,
-//       description: taskDesc.value,
-//       is_complete: false,
-//     },
-//   ]);
-// }
+
+
+
 
 // constant to save a variable that define the custom event that will be emitted to the homeView
 

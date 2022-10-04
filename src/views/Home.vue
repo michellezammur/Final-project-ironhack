@@ -1,7 +1,7 @@
 <template>
 <Nav />
+<NewTask />
 
-<h1>Hello</h1>
 
   <!-- <div id="flexbox">
     <div class="flexbox_element">
@@ -28,7 +28,6 @@
 </template>
 
 <script setup>
-import NewTask from "@/components/NewTask.vue";
 import { useTaskStore } from "../stores/task.js";
 import TaskItem from "../components/TaskItem.vue";
 import { ref } from "vue";
@@ -39,6 +38,7 @@ import Nav from "../components/Nav.vue";
 //coger el email del usuario
 
 import { useUserStore } from "@/stores/user.js";
+import NewTask from "../components/NewTask.vue";
 let userName = ref(useUserStore().user.email);
 
 // nos definimos la tienda del usuario dentro de una constante

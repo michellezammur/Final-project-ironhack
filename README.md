@@ -80,3 +80,7 @@ Lil Supa
 
 "He dado estilo y logica al nav-bar"
 
+16:30h:
+
+"Comence a crear el componente "NewTask.vue", le he añadido estilo con Tailwind, pero tengo problemas con centrar el icono "TASK", he intentado varias formas pero aun no lo logro."
+
