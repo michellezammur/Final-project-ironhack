@@ -70,6 +70,13 @@ Lil Supa
 
 ## Resumen Diario
 
-04/10/22: 10:44am :
+04/10/22
+
+10:44h :
 
 "He instalado Tailwind, he trabajado en el task.js y en NewTaks.vue, ademas de crear componentes como "DoneTask.vue" y "ToDoTask.vue" y enlazarlos en el home.vue ".
+
+14h:
+
+"He dado estilo y logica al nav-bar"
+
