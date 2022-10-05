@@ -6,19 +6,19 @@ Develop the final project running on Vue 3 with the composition API, Pinia as a 
 
 Tareas Diarias:
 
-✅ Instalar Tailwind 
-✅ Enlazar Paginas al Home view
-✅ Dar estilo y logica al nav-bar
-✅ Crear componente NewTask.vue y añadir estilo con Tailwind
+- ✅ Instalar Tailwind 
+- ✅ Enlazar Paginas al Home view
+- ✅ Dar estilo y logica al nav-bar
+- ✅ Crear componente NewTask.vue y añadir estilo con Tailwind
 
 # 🗓️ 05/10/2022
 
 Tareas Diarias:
 
-✅Añadir logica al NewTask y TaskItem (Crear interacciones para añadir y eliminar tareas)
-❌Modelar TaskItem
-❌Crear interaccion para el boton de "check list"
-❌Modelar el Sign In 
+- ✅Añadir logica al NewTask y TaskItem (Crear interacciones para añadir y eliminar tareas)
+- ❌Modelar TaskItem
+- ❌Crear interaccion para el boton de "check list"
+- ❌Modelar el Sign In 
 
 
 # 🗒️ Lista General de tareas:
