@@ -18,16 +18,27 @@ Tareas Diarias:
 - ✅Añadir logica al NewTask y TaskItem (Crear interacciones para añadir y eliminar tareas)
 - ❌Modelar TaskItem
 - ❌Crear interaccion para el boton de "check list"
-- ❌Modelar el Sign In 
+- ✅Modelar el Sign In 
+
+# 🗓️ 06/10/2022 
+
+Tareas Diarias:
+
+- Modelar TaskItem
+- Modelar Sign Up
+- Crear interaccion para el boton de "check list"
+
 
 
 # 🗒️ Lista General de tareas:
 
 - Hacer web responsive (nav-bar:menu hamburguesa)
 - TaskItem style + edit form style
-- Introducir fecha (momentjs)
+- Programar fecha 
 - Footer + style
 - SignIn/Up style
+- Arreglar imagen del SignIn
+- Menu Hamburguesa
 
 
 
