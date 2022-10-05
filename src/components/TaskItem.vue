@@ -1,21 +1,34 @@
 <template>
   <div class="taskItem">
     <li>
-      <b>{{ taskData.title }} </b><br />
-      <i> {{ taskData.description }}</i
-      ><br />
-      <button class="green_btn">DONE</button
-      ><button class="red_btn">X-Delete</button>
+      <b>{{ taskData.title }} </b>
+      <br />
+      <i> {{ taskData.description }}</i>
+      <br />
+      <button class="bg-violet-400" @click="childDelete">Delete</button
+      >
+      <button class="bg-violet-400" @click="childUpdate">Update</button>
     </li>
   </div>
 </template>
 
 <script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
+import { ref } from "vue";
+
+const emit = defineEmits(["childDelete"])
 
 const props = defineProps(["taskData"]);
+
+// Funcion para pasarle nuestro evento particular al padre para poder habilitar el delete de una tarea en particular. Esto se hace mediante un emit
+
+function childDelete() {
+  emit("childDelete", props.taskData)
+}
+
+function childUpdate() {
+  emit("childUpdate", props.taskData)
+}
+
 </script>
 
 <style></style>

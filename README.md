@@ -1,15 +1,32 @@
-# final-boiler-plate
+# FINAL PROJECT : TO DO APP
 
-This template should help get you started developing the final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
+Develop the final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
 
-This is meant as an advanced starter ready to plug in your supabase variables and run directly on a local server already connected to your Supabase instance. 
+# 🗓️ 04/10/2022
 
-You are given some functions to see how the supabase ecosystem works with Vue and more specifically, pinia as a state management tool.
+# 💻 Tareas Diarias:
 
-You can add any CSS framework of your liking like tailwindCSS, Bootstrap, MaterialUI or many of the cool libaries that exist in the web. 
+✅ Instalar Tailwind 
+✅ Enlazar Paginas al Home view
+✅ Dar estilo y logica al nav-bar
+✅ Crear componente NewTask.vue y añadir estilo con Tailwind
 
-## Important
-This app is not setUp to be deployed to a production environment like vercel or netlify. 
+# 🗓️ 05/10/2022
+
+# 💻 Tareas Diarias:
+
+❌Añadir logica al NewTask y TaskItem (Crear interacciones para añadir y eliminar tareas)
+❌Modelar el Sign In 
+
+
+# 🗒️ Lista General de tareas:
+
+- Hacer web responsive (nav-bar:menu hamburguesa)
+- TaskItem style + edit form style
+- Introducir fecha (momentjs)
+- Footer + style
+- SignIn/Up style
+
 
 
 ## Project Setup
@@ -37,54 +54,3 @@ npm run dev
 ```sh
 npm run build
 ```
-
-### Good Music is always key!
-
-```sh
-Wu Tang Clan
-A tribe called quest
-Kendrick Lamar
-Outkast
-Dr. Dre
-N.W.A
-De La Soul 
-Ms. Lauryn Hill
-J. Cole 
-Guts
-Naughty By Nature
-People under the stairs
-Nujabes
-NAS
-KRS-One
-The Pharcyde
-Jurassic 5
-Gang starr
-Jay Z
-Mobb Depp
-Common
-Lil Supa
-```
-[Hip Hop Spotify Playlist](https://open.spotify.com/playlist/4vKftyhS1gQovakehVcq1u?si=a7a119382dfe40da)
-
-
-
-## Resumen Diario
-
-04/10/22
-
-10:44h :
-
-"He instalado Tailwind, he trabajado en el task.js y en NewTaks.vue, ademas de crear componentes como "DoneTask.vue" y "ToDoTask.vue" y enlazarlos en el home.vue ".
-
-14h:
-
-"He dado estilo y logica al nav-bar"
-
-16:30h:
-
-"Comence a crear el componente "NewTask.vue", le he añadido estilo con Tailwind, pero tengo problemas con centrar el icono "TASK", he intentado varias formas pero aun no lo logro."
-
-18h:
-
-"Tengo estructurado el NewTask.vue, mañana comenzare a añadirle logica y a crear la intereccion para añadir una nueva tarea."
-

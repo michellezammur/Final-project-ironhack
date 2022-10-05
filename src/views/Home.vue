@@ -1,8 +1,13 @@
 <template>
-<Nav />
-<NewTask />
-<Footer />
-
+  <Nav />
+  <NewTask />
+  <TaskItem v-for="(task, index) in taskArray" 
+  :key="index" 
+  :taskData="task"
+  @child-delete="deleteTask"
+  @childUpdate="updateTask"
+   />
+  <Footer />
 
   <!-- <div id="flexbox">
     <div class="flexbox_element">
@@ -14,65 +19,69 @@
     </div>
     <div id="todoTasks" class="flexbox_element">
       <TodoTasks />
-      <ol>
-        <TaskItem
-          v-for="(task, index) in taskArray"
-          :key="index"
-          :taskData="task"
-        ></TaskItem>
-      </ol>
     </div>
     <div id="doneTasks" class="flexbox_element"><DoneTasks /></div>
   </div> -->
-
-  
 </template>
 
 <script setup>
-import { useTaskStore } from "../stores/task.js";
-import TaskItem from "../components/TaskItem.vue";
 import { ref } from "vue";
-import ToDoTasks from "../components/ToDoTask.vue";
-import DoneTasks from "../components/DoneTask.vue";
+import { useTaskStore } from "../stores/task";
+import TaskItem from "../components/TaskItem.vue";
 import Nav from "../components/Nav.vue";
-
-//coger el email del usuario
-
-import { useUserStore } from "@/stores/user.js";
 import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
-let userName = ref(useUserStore().user.email);
 
-// nos definimos la tienda del usuario dentro de una constante
-const taskStore = useTaskStore();
+import ToDoTasks from "../components/ToDoTask.vue";
+import DoneTasks from "../components/DoneTask.vue";
+
+import { useUserStore } from "@/stores/user.js";
+// let userName = ref(useUserStore().user.email);
+
 // Inicializamos array de tareas
 let taskArray = ref([]);
 
-async function readFromStore() {
+// nos definimos la tienda del usuario dentro de una constante
+const taskStore = useTaskStore();
+
+async function getTasks() {
   taskArray.value = await taskStore.fetchTasks();
 }
+getTasks();
 
-readFromStore();
+// Funcion para borrar la tarea
+
+async function deleteTask(task) {
+  await taskStore.deleteTasks(task.id);
+  getTasks();
+}
+
+// Funcion para crear la tarea
+
+async function updateTask(task) {
+  await taskStore.updateTask(task.id);
+  getTasks();
+}
 
 // Enviamos los datos de la tarea a la Tienda taskStore
-async function sendToStore(title, description) {
-  await taskStore.addTask(title, description);
-  readFromStore();
-}
+// async function sendToStore(title, description) {
+//   await taskStore.addTask(title, description);
+//   getTasks();
+// }
 // async function readAll() {
 //   let { data: tasks, error } = await supabase.from("tasks").select("*");
 // }
 // readAll();
 </script>
 <style scoped>
-#todoTasks {
+/* #todoTasks {
   background-color: rgb(33, 35, 118);
   color: white;
 }
 #doneTasks {
   background-color: rgb(41, 93, 41);
   color: white;
-}
+} */
 </style>
 
 <!-- 

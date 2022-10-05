@@ -28,18 +28,28 @@ export const useTaskStore = defineStore("tasks", {
       ]);
     },
 
-    async completeTask(taskID) {
-      const { data, error } = await supabase
-        .from("tasks")
-        .update({ is_complete: true })
-        .eq("id", taskID);
-    },
+    // Funcion para borrar tareas de supabase
+    // Nos conectamos a supabase mediante una llamada de espera con 'await' y apuntamos a 3 metodos nativos de supabase 'from, delete y match'
 
-    async deleteAllTasks() {
+    async deleteTasks(id) {
       const { data, error } = await supabase
         .from("tasks")
         .delete()
-        .eq("is_complete", false);
+        .match({id: id})
     },
+
+    async updateTask(title, description, id) {
+      const { data, error } = await supabase
+        .from("task")
+        .update({ title: title }, { description: description }).
+        match({ id: id })
+    },
+
+    // async completeTask(taskID) {
+    //   const { data, error } = await supabase
+    //     .from("tasks")
+    //     .update({ is_complete: true })
+    //     .eq("id", taskID);
+    // },
   },
 });
