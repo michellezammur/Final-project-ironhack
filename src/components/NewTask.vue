@@ -1,8 +1,9 @@
 <template>
+
   <div class="pt-12 pb-24 bg-pink-50">
-    <div class="container px-auto mx-auto">
+    <div class="flex flex-col items-center container px-auto mx-auto">
       <span
-        class="inline-block px-3 mb-4 text-xs leading-5 text-violet-500 bg-violet-100 font-medium rounded-full"
+        class=" w-fit inline-block px-3 mb-4 text-xs leading-5 text-violet-500 bg-violet-100 font-medium rounded-full"
         >TASK</span
       >
       <h2
@@ -55,6 +56,7 @@
 import { ref } from "vue";
 import { supabase } from "../supabase";
 import { useTaskStore } from "../stores/task";
+import TaskItem from "./TaskItem.vue";
 
 
 // constant to save a variable that define the custom event that will be emitted to the homeView
@@ -83,9 +85,6 @@ function uploadTask() {
 
 // constant to save a variable that holds the value of the title input field of the new task
 
-const newTask = () => {
-  
-}
 
 // constant to save a variable that holds the value of the description input field of the new task
 

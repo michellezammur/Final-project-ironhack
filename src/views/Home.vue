@@ -1,27 +1,18 @@
 <template>
   <Nav />
-  <NewTask />
-  <TaskItem v-for="(task, index) in taskArray" 
+   <div>
+   <NewTask @childNewTask="sendToStore" />
+   <p class="bg-black text-white">Total tasks: {{ taskArray.length }}</p>
+   <TaskItem v-for="(task, index) in taskArray" 
   :key="index" 
   :taskData="task"
   @child-delete="deleteTask"
   @childUpdate="updateTask"
    />
-  <Footer />
+   <Footer />
+  </div>
+  
 
-  <!-- <div id="flexbox">
-    <div class="flexbox_element">
-      <div>You are signed up as {{ userName }}</div>
-
-      <NewTask @childNewTask="sendToStore" />
-      <br />
-      <p>Total tasks: {{ taskArray.length }}</p>
-    </div>
-    <div id="todoTasks" class="flexbox_element">
-      <TodoTasks />
-    </div>
-    <div id="doneTasks" class="flexbox_element"><DoneTasks /></div>
-  </div> -->
 </template>
 
 <script setup>
@@ -31,12 +22,8 @@ import TaskItem from "../components/TaskItem.vue";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
-
-import ToDoTasks from "../components/ToDoTask.vue";
-import DoneTasks from "../components/DoneTask.vue";
-
 import { useUserStore } from "@/stores/user.js";
-// let userName = ref(useUserStore().user.email);
+let userName = ref(useUserStore().user.email);
 
 // Inicializamos array de tareas
 let taskArray = ref([]);
@@ -58,30 +45,31 @@ async function deleteTask(task) {
 
 // Funcion para crear la tarea
 
-async function updateTask(task) {
-  await taskStore.updateTask(task.id);
+async function updateTask(title, description, id) {
+  await taskStore.updateTask(title, description, id);
   getTasks();
 }
 
 // Enviamos los datos de la tarea a la Tienda taskStore
-// async function sendToStore(title, description) {
-//   await taskStore.addTask(title, description);
-//   getTasks();
-// }
-// async function readAll() {
-//   let { data: tasks, error } = await supabase.from("tasks").select("*");
-// }
-// readAll();
+
+async function sendToStore(title, description) {
+  await taskStore.addTask(title, description);
+  getTasks();
+}
+async function readAll() {
+  let { data: tasks, error } = await supabase.from("tasks").select("*");
+}
+readAll();
+
+// Function boton tarea completada
+
+async function completeTask(task) {
+  await taskStore.completeTask(task.id);
+  completeTask();
+}
+
 </script>
 <style scoped>
-/* #todoTasks {
-  background-color: rgb(33, 35, 118);
-  color: white;
-}
-#doneTasks {
-  background-color: rgb(41, 93, 41);
-  color: white;
-} */
 </style>
 
 <!-- 
