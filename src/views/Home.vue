@@ -2,7 +2,7 @@
   <Nav />
    <div>
    <NewTask @childNewTask="sendToStore" />
-   <p class="bg-black text-white">Total tasks: {{ taskArray.length }}</p>
+   <p class="bg-white text-black">Total tasks: {{ taskArray.length }}</p>
    <TaskItem v-for="(task, index) in taskArray" 
   :key="index" 
   :taskData="task"

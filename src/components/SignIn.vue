@@ -104,7 +104,7 @@
               </div>
             </div>
           </div>
-          <img class="md:absolute md:top-0 md:right-0 mx-auto my-28 md:h-full md:w-2/5 lg:w-1/2 md:object-cover" src="https://cdn5.vectorstock.com/i/1000x1000/25/99/task-list-to-do-list-time-management-work-vector-37982599.jpg" alt="" />
+          <img class="md:absolute md:top-0 md:right-0 mx-auto my-28 md:h-full md:w-2/5 lg:w-1/2 md:object-cover" src="../views/task-list-to-do-list-time-management-work-vector-37982599.jpeg" alt="" />
         </div>
       </div>
     </div>

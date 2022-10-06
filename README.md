@@ -24,21 +24,25 @@ Tareas Diarias:
 
 Tareas Diarias:
 
-- Modelar TaskItem
-- Modelar Sign Up
+- ✅ Modelar TaskItem
+- ❌ Modelar Sign Up
+- ✅ Arreglar imagen del SignIn
+- ✅ Footer + style
+
+# 🗓️ 07/10/2022 
+
+Tareas Diarias:
+
 - Crear interaccion para el boton de "check list"
+- Programar boton "Save" - Task Item
+- No funciona el boton de Sign Up (arreglar)
+- Programar fecha 
 
-
-
-# 🗒️ Lista General de tareas:
+# 🗒️ Lista General de tareas pendientes:
 
 - Hacer web responsive (nav-bar:menu hamburguesa)
-- TaskItem style + edit form style
-- Programar fecha 
-- Footer + style
-- SignIn/Up style
-- Arreglar imagen del SignIn
-- Menu Hamburguesa
+- Modelar Sign Up
+- Añadir logica a botones del footer
 
 
 
