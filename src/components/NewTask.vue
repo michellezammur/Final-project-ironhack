@@ -15,7 +15,7 @@
         Keep your life organized, prepare for a trip? Start here
       </p>
       <p class="text-center mb-10 text-lg text-gray-800 font-medium">
-        Today's Date is Oct 4th 2022
+        {{date}}
       </p>
     </div>
 
@@ -57,6 +57,9 @@ import { ref } from "vue";
 import { supabase } from "../supabase";
 import { useTaskStore } from "../stores/task";
 import TaskItem from "./TaskItem.vue";
+import moment from "moment";
+import 'moment/locale/es';
+
 
 
 // constant to save a variable that define the custom event that will be emitted to the homeView
@@ -67,6 +70,9 @@ let taskTitle = ref("");
 let taskDesc = ref("");
 let errorBool = ref(false);
 const emptyString = ref("");
+
+const date = moment().format('MMMM Do YYYY, h:mm:ss a'); 
+
 
 function uploadTask() {
   if (taskTitle.value === "") {
@@ -79,9 +85,11 @@ function uploadTask() {
     emit("childNewTask", taskTitle.value, taskDesc.value);
     taskTitle.value = "";
     taskDesc.value = "";
-    console.log(taskTitle.value);
+    
   }
 }
+
+
 
 // constant to save a variable that holds the value of the title input field of the new task
 

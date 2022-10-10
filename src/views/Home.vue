@@ -8,6 +8,7 @@
   :taskData="task"
   @child-delete="deleteTask"
   @childUpdate="updateTask"
+  @childCompleted="completeTask"
    />
    <Footer />
   </div>
@@ -56,17 +57,18 @@ async function sendToStore(title, description) {
   await taskStore.addTask(title, description);
   getTasks();
 }
-async function readAll() {
-  let { data: tasks, error } = await supabase.from("tasks").select("*");
-}
-readAll();
+// async function readAll() {
+//   let { data: tasks, error } = await supabase.from("tasks").select("*");
+// }
+// readAll();
 
 // Function boton tarea completada
 
-async function completeTask(task) {
-  await taskStore.completeTask(task.id);
-  completeTask();
+async function completeTask(id) {
+  await taskStore.completeTask(id);
+  getTasks();
 }
+
 
 </script>
 <style scoped>

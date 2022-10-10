@@ -1,4 +1,5 @@
 <template>
+  
   <nav
     class="bg-white border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800"
   >
@@ -61,6 +62,7 @@ import { ref, computed } from "vue";
 import { useUserStore } from "../stores/user.js";
 //constant to save a variable that will hold the use router method
 import { useRouter } from "vue-router";
+
 // user de la tienda
 let userName = useUserStore().user.email;
 let userNameClean = userName.split("@")[0];

@@ -29,14 +29,14 @@ Tareas Diarias:
 - ✅ Arreglar imagen del SignIn
 - ✅ Footer + style
 
-# 🗓️ 07/10/2022 
+# 🗓️ 10/10/2022 
 
 Tareas Diarias:
 
-- Crear interaccion para el boton de "check list"
+- ✅ Crear interaccion para el boton de "check list/completado"
 - Programar boton "Save" - Task Item
 - No funciona el boton de Sign Up (arreglar)
-- Programar fecha 
+- ✅ Programar fecha (moment)
 
 # 🗒️ Lista General de tareas pendientes:
 
