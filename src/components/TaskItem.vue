@@ -56,10 +56,9 @@
               </svg>
             </button>
             <br />
-
-            <button @click="currentTaskBool = !currentTaskBool">TEST ME</button>
+            <button class="rounded-full p-2 text-white bg-blue-500" @click="childCancel"> Cancel </button>
             <button 
-            class="rounded-full p-2 text-white  hover:bg-green-500"
+            class="rounded-full p-2 text-white hover:bg-green-500"
            :class="taskData.is_complete ? 'bg-green-500' : 'bg-red-500' "
             @click="childCompleted">
               <svg
@@ -120,10 +119,10 @@ let taskTitle = ref(props.taskData.title);
 let taskDesc = ref(props.taskData.description);
 let showForm = ref(false);
 let completeTask = ref(false);
+let cancelTask = ref(true);
+let taskUpdate = ref(props.taskData.taskTitle.taskDesc);
 
-let currentTaskBool = ref(props.taskData.is_complete)
-
-const emit = defineEmits(["childDelete", "childUpdate", "childCompleted"]);
+const emit = defineEmits(["childDelete", "childUpdate", "childCompleted", "childCancel"]);
 
 const props = defineProps(["taskData"]);
 
@@ -135,6 +134,8 @@ function childDelete() {
 
 function childUpdate() {
   emit("childUpdate", taskTitle.value, taskDesc.value, props.taskData.id);
+  console.log(taskUpdate.value);
+  console.log(props.taskData = !props.taskData);
 }
 
 // Funcion para aparecer y desaparecer el formulario
@@ -152,14 +153,18 @@ function toggleForm() {
 // Funcion Tarea Completada
 
 function childCompleted() {
-  emit("childCompleted", props.taskData.id, props.taskData.is_complete);
+  emit("childCompleted", props.taskData.id);
+  console.log(completeTask.value);
   console.log(props.taskData.id);
   console.log(props.taskData.is_complete);
 
-  currentTaskBool = !currentTaskBool
 }
 
-
+function childCancel() {
+  emit("childCancel", props.taskData.id);
+  console.log(cancelTask.value)
+  console.log(props.taskData.is_complete = !props.taskData.is_complete);
+}
 
 
 
@@ -169,7 +174,7 @@ function childCompleted() {
 
 <style></style>
 
-// <!-- 
+<!-- // 
 // **Hints**
 // 1. ref() or reactive() can be used here to store the following, think if you want to store them either individually or like an object, up to you.
 // 2. Data properties need here are the following: a boolean to store a false**Important variable, a string to store an error, a string to store the value of the task that the user can edit, an initial false boolean to hide the inputFIeld used to edit the new task detail or details[this is in reference of the task title and the task description].

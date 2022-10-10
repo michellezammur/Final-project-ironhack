@@ -1,4 +1,6 @@
 <template>
+<SignUp />
+
   <body>
     <div id="app" data-v-app>
       <div class="min-h-min">
@@ -119,6 +121,8 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/vue/24/solid";
+import SingUp from '../components/SignUp.vue'
+
 
 // Route Variables
 const route = "/auth/sign-up";
