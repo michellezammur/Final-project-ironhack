@@ -34,14 +34,21 @@ Tareas Diarias:
 Tareas Diarias:
 
 - ✅ Crear interaccion para el boton de "check list/completado"
-- Programar boton "Save" - Task Item
-- No funciona el boton de Sign Up (arreglar)
+- ❌ Programar boton "Save" - Task Item
+- ✅ No funciona el boton de Sign Up (arreglar)
 - ✅ Programar fecha (moment)
+- ✅ Modelar Sign Up
+
+# 🗓️ 11/10/2022 
+
+Tareas Diarias:
+
+- Programar boton "Save" - Task Item
+- Hacer web responsive (nav-bar:menu hamburguesa)
+
 
 # 🗒️ Lista General de tareas pendientes:
 
-- Hacer web responsive (nav-bar:menu hamburguesa)
-- Modelar Sign Up
 - Añadir logica a botones del footer
 
 

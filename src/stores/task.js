@@ -45,10 +45,10 @@ export const useTaskStore = defineStore("tasks", {
         .match({ id: id });
     },
 
-    async completeTask(id) {
+    async completeTask(id, boolean) {
       const { data, error } = await supabase
         .from("tasks")
-        .update({ is_complete: !this.is_complete })
+        .update({ is_complete: !boolean })
         .match({ id: id });
     },
   },

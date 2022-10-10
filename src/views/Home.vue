@@ -64,8 +64,8 @@ async function sendToStore(title, description) {
 
 // Function boton tarea completada
 
-async function completeTask(id) {
-  await taskStore.completeTask(id);
+async function completeTask(id, boolean) {
+  await taskStore.completeTask(id, boolean);
   getTasks();
 }
 

@@ -56,7 +56,7 @@
               </svg>
             </button>
             <br />
-            <button class="rounded-full p-2 text-white bg-blue-500" @click="childCancel"> Cancel </button>
+            
             <button 
             class="rounded-full p-2 text-white hover:bg-green-500"
            :class="taskData.is_complete ? 'bg-green-500' : 'bg-red-500' "
@@ -119,10 +119,10 @@ let taskTitle = ref(props.taskData.title);
 let taskDesc = ref(props.taskData.description);
 let showForm = ref(false);
 let completeTask = ref(false);
-let cancelTask = ref(true);
-let taskUpdate = ref(props.taskData.taskTitle.taskDesc);
 
-const emit = defineEmits(["childDelete", "childUpdate", "childCompleted", "childCancel"]);
+
+
+const emit = defineEmits(["childDelete", "childUpdate", "childCompleted",]);
 
 const props = defineProps(["taskData"]);
 
@@ -134,8 +134,6 @@ function childDelete() {
 
 function childUpdate() {
   emit("childUpdate", taskTitle.value, taskDesc.value, props.taskData.id);
-  console.log(taskUpdate.value);
-  console.log(props.taskData = !props.taskData);
 }
 
 // Funcion para aparecer y desaparecer el formulario
@@ -153,17 +151,11 @@ function toggleForm() {
 // Funcion Tarea Completada
 
 function childCompleted() {
-  emit("childCompleted", props.taskData.id);
+  emit("childCompleted", props.taskData.id, props.taskData.is_complete);
   console.log(completeTask.value);
   console.log(props.taskData.id);
   console.log(props.taskData.is_complete);
 
-}
-
-function childCancel() {
-  emit("childCancel", props.taskData.id);
-  console.log(cancelTask.value)
-  console.log(props.taskData.is_complete = !props.taskData.is_complete);
 }
 
 

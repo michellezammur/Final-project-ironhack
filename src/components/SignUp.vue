@@ -1,45 +1,88 @@
 <template>
-  <div>Sign Up</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Good Music, Patience and a lot effort</p>
-  <p>Keep calm and code on!</p>
-
+  <PersonalRouter class="invisible" :route="route" :buttonText="buttonText" />
+ <body>
+  <div id="app" data-v-app>
+      <div class="min-h-min">
+        <div class="relative pt-16 pb-0 md:py-32 bg-white md:min-h-screen">
+          <div class="container px-4 mx-auto mb-16 md:mt-10">
+            <div
+              class="w-full md:w-3/5 lg:w-1/2 animate_animate animate_fadeIn"
+            >
+              <div class="max-w-sm mx-auto">
+                <div class="mb-6 text-center">
+                  <a
+                    aria-current="page"
+                    href="/auth#"
+                    class="router-link-active router-link-exact-active inline-block mb-6"
+                    ><img
+                      class="h-16"
+                      src="https://i.pinimg.com/originals/1b/37/a3/1b37a31607ae30bf0fd3cf73f6009447.png"
+                      alt=""
+                  /></a>
+                </div>
+                <h3 class="appTitle text-center font-bold">
+                  Register to Task List App!
+                </h3>
+                <p class="appSubtitle text-center text-gray-500">
+                  Start Organizing your tasks todays!
+                </p>
+                <p v-if="errorMsg" class="">
+                  {{ errorMsg }}
+                </p>
+               
   <form @submit.prevent="signUp">
-    <div class="">
-      <label class="" for="">Email</label>
+    <div class="mb-6">
+      <label class="inputFieldLabel" for="">Email</label>
       <input
-        class=""
+        class="inputField"
         type="email"
         placeholder="dave@wuTangfinancial.com"
         v-model="email"
         id="email"
       />
     </div>
-    <div class="">
-      <label class="" for="">Password</label>
+    <div class="relative flex w-full flex-wrap items-stretch mb-3">
+      <label class="inputFieldLabel" for="">Password</label>
       <input
-        class=""
+        class="inputField"
         type="password"
         placeholder="************"
         v-model="password"
         id="password"
       />
     </div>
-    <div class="">
-      <label class="" for="">Confirm Password</label>
+    <div class="relative flex w-full flex-wrap items-stretch mb-3">
+      <label class="inputFieldLabel" for="">Confirm Password</label>
       <input
-        class=""
+        class="inputField"
         type="password"
         placeholder="************"
         v-model="confirmPassword"
         id="confirmPassword"
       />
     </div>
-    <button class="" type="submit">Sign Up</button>
-    <p class="">
-      <span class="">Have an account? </span>
+    <button class="inline-block mt-3 py-3 px-40 text-sm leading-5 text-white bg-violet-400 focus:ring-violet-300 focus:ring-opacity-50 rounded-md" type="submit">Sign Up</button>
+    <p class="text-center">
+      <span class="font-meium font-bold">Have an account? </span>
+      <router-link
+                        to="/auth/login"
+                        class="inline-block font-medium text-green-800 hover:text-green-900 hover:underline"
+                        >Sign In</router-link
+                      >
     </p>
   </form>
+  </div>
+  </div>
+  </div>
+  <img
+            class="md:absolute md:top-0 md:right-0 mx-auto my-28 md:h-full md:w-2/5 lg:w-1/2 md:object-cover"
+            src="../views/task-list-to-do-list-time-management-work-vector-37982599.jpeg"
+            alt=""
+          />
+  </div>
+  </div>
+  </div>
+</body>
 </template>
 
 <script setup>
