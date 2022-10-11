@@ -97,8 +97,8 @@
                 /><br /><br />
 
                 <button
-                  class="w-1/6 ml-2 inline-block py-2 px-4 text-sm leading-5 text-violet-50 bg-violet-400 hover:bg-violet-500 font-medium focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50 rounded-md"
-                  @click.prevent="childUpdate"
+                  class="w-1/4 ml-2 inline-block py-2 px-4 text-sm leading-5 text-violet-50 bg-violet-400 hover:bg-violet-500 font-medium focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50 rounded-md"
+                  @click.prevent="saveEditTask"
                 >
                   Save
                 </button>
@@ -119,10 +119,11 @@ let taskTitle = ref(props.taskData.title);
 let taskDesc = ref(props.taskData.description);
 let showForm = ref(false);
 let completeTask = ref(false);
+// let editMode = ref(false);
 
 
 
-const emit = defineEmits(["childDelete", "childUpdate", "childCompleted",]);
+const emit = defineEmits(["childDelete", "childUpdate", "childCompleted", "saveEditTask",]);
 
 const props = defineProps(["taskData"]);
 
@@ -158,8 +159,14 @@ function childCompleted() {
 
 }
 
+// Funcion Boton de guardado tarea editada 
 
-
+// function saveEditTask() {
+//   emit("saveEditTask", taskTitle.value, taskDesc.value, props.taskData);
+//   taskTitle.value = "";
+//   taskDesc.value = "";
+// }
+// console.log(editMode.value);
 
 
 </script>

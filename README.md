@@ -44,7 +44,8 @@ Tareas Diarias:
 Tareas Diarias:
 
 - Programar boton "Save" - Task Item
-- Hacer web responsive (nav-bar:menu hamburguesa)
+- ✅ Hacer web responsive
+- menu hamburguesa
 
 
 # 🗒️ Lista General de tareas pendientes:
