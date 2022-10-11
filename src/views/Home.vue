@@ -46,8 +46,8 @@ async function deleteTask(task) {
 
 // Funcion para crear la tarea
 
-async function updateTask(title, description) {
-  await taskStore.updateTask(title, description);
+async function updateTask(title, description, id) {
+  await taskStore.updateTask(title, description, id);
   getTasks();
 }
 

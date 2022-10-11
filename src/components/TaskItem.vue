@@ -119,7 +119,7 @@ let taskTitle = ref(props.taskData.title);
 let taskDesc = ref(props.taskData.description);
 let showForm = ref(false);
 let completeTask = ref(false);
-// let editMode = ref(false);
+let editMode = ref(false);
 
 
 
@@ -161,12 +161,12 @@ function childCompleted() {
 
 // Funcion Boton de guardado tarea editada 
 
-// function saveEditTask() {
-//   emit("saveEditTask", taskTitle.value, taskDesc.value, props.taskData);
-//   taskTitle.value = "";
-//   taskDesc.value = "";
-// }
-// console.log(editMode.value);
+function saveEditTask() {
+  emit("childUpdate", taskTitle.value, taskDesc.value, props.taskData.id);
+  taskTitle.value = "";
+  taskDesc.value = "";
+}
+console.log(editMode.value);
 
 
 </script>

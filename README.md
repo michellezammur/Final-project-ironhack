@@ -43,16 +43,15 @@ Tareas Diarias:
 
 Tareas Diarias:
 
-- Programar boton "Save" - Task Item
+- ✅ Programar boton "Save" - Task Item
 - ✅ Hacer web responsive
-- menu hamburguesa
+- ✅ menu hamburguesa
 
 
 # 🗒️ Lista General de tareas pendientes:
 
 - Añadir logica a botones del footer
-
-
+- Diapositivas Presentacion
 
 ## Project Setup
 
