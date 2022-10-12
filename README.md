@@ -50,7 +50,8 @@ Tareas Diarias:
 
 # 🗒️ Lista General de tareas pendientes:
 
-- Añadir logica a botones del footer
+
+- logica menu hamburguesa
 - Diapositivas Presentacion
 
 ## Project Setup
