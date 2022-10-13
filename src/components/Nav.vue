@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex justify-between bg-white border-gray-200 px-2 sm:px-4 py-4 rounded "
+    class="flex justify-between bg-white border-gray-200 px-2 sm:px-8 py-4 rounded"
   >
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <!-- logo -->
@@ -36,44 +36,50 @@
       </div>
     </div>
     <!-- Menu hamburguesa -->
-    <div>
+    <div class="md:hidden" @click="changeClickBurger">
       <button
-        class="navbar-burger self-center lg:hidden"
-        @click="changeClickBurger"
+        class="text-gray-500 w-10 h-10 relative focus:outline-none bg-white"
+        
       >
-        <svg
-          width="35"
-          height="35"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          <rect
-            class="text-gray-50"
-            width="32"
-            height="32"
-            rx="6"
-            fill="currentColor"
-          ></rect>
-          <path
-            class="text-gray-500"
-            d="M7 12H25C25.2652 12 25.5196 11.8946 25.7071 11.7071C25.8946 11.5196 26 11.2652 26 11C26 10.7348 25.8946 10.4804 25.7071 10.2929C25.5196 10.1054 25.2652 10 25 10H7C6.73478 10 6.48043 10.1054 6.29289 10.2929C6.10536 10.4804 6 10.7348 6 11C6 11.2652 6.10536 11.5196 6.29289 11.7071C6.48043 11.8946 6.73478 12 7 12ZM25 15H7C6.73478 15 6.48043 15.1054 6.29289 15.2929C6.10536 15.4804 6 15.7348 6 16C6 16.2652 6.10536 16.5196 6.29289 16.7071C6.48043 16.8946 6.73478 17 7 17H25C25.2652 17 25.5196 16.8946 25.7071 16.7071C25.8946 16.5196 26 16.2652 26 16C26 15.7348 25.8946 15.4804 25.7071 15.2929C25.5196 15.1054 25.2652 15 25 15ZM25 20H7C6.73478 20 6.48043 20.1054 6.29289 20.2929C6.10536 20.4804 6 20.7348 6 21C6 21.2652 6.10536 21.5196 6.29289 21.7071C6.48043 21.8946 6.73478 22 7 22H25C25.2652 22 25.5196 21.8946 25.7071 21.7071C25.8946 21.5196 26 21.2652 26 21C26 20.7348 25.8946 20.4804 25.7071 20.2929C25.5196 20.1054 25.2652 20 25 20Z"
-            fill="currentColor"
-          ></path>
-        </svg>
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ 'rotate-45': clickBurger, ' -translate-y-1.5': !clickBurger }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ 'opacity-0': clickBurger }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ '-rotate-45': clickBurger, ' translate-y-1.5': !clickBurger }"
+          ></span>
+        </div>
       </button>
     </div>
   </nav>
 
   <!-- Menu Hamburguesa Contenido -->
+
   <nav 
-  :class="clickBurger ? 'transition ease-in-out duration-400 scale-100 ' : 'hidden scale-0' "
-  class="bg-blue-200 absolute w-full transform origin-top">
-    <ul>
+  class="bg-blue-200"
+  :class="
+    clickBurger ? 'transition-all ease-out duration-500 h-16' : 'transition-all ease-in duration-500 h-0'
+    ">
+    <ul
+    class="duration-300 ease-out"
+    :class="clickBurger ? 'transition-all ease-out duration-500' : 'hidden' "
+    >
       <li>Home</li>
       <li>Log Out</li>
     </ul>
   </nav>
+
 </template>
 
 <script setup>
@@ -102,18 +108,11 @@ const logo =
 
 // Menu Hamburguesa
 
-// const hamburger = document.querySelector('.hamburger');
-
-// hamburger.addEventListener("click", () => {
-//     hamburger.classList.toggle("active");
-
-// })
-
 const clickBurger = ref(false);
 
 function changeClickBurger() {
   clickBurger.value = !clickBurger.value;
-  console.log("Hola");
+  console.log('hola');
 }
 </script>
 

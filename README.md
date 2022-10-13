@@ -54,8 +54,8 @@ Tareas Diarias:
 - logica menu hamburguesa
 - ✅ ojo de sig in
 - ✅ design total task
-- ?nav-bar (tamaño)
-- ? Footer (tamaño)
+- ✅ nav-bar (tamaño)
+- ✅  Footer (tamaño)
 - Diapositivas Presentacion
 
 ## Project Setup
