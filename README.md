@@ -47,11 +47,15 @@ Tareas Diarias:
 - ✅ Hacer web responsive
 - ✅ menu hamburguesa
 
+# 🗓️ 11/10/2022 
 
-# 🗒️ Lista General de tareas pendientes:
-
+Tareas Diarias:
 
 - logica menu hamburguesa
+- ✅ ojo de sig in
+- ✅ design total task
+- ?nav-bar (tamaño)
+- ? Footer (tamaño)
 - Diapositivas Presentacion
 
 ## Project Setup

@@ -1,19 +1,26 @@
 <template>
   <Nav />
-   <div>
-   <NewTask @childNewTask="sendToStore" />
-   <p class="bg-white text-black">Total tasks: {{ taskArray.length }}</p>
-   <TaskItem v-for="(task, index) in taskArray" 
-  :key="index" 
-  :taskData="task"
-  @child-delete="deleteTask"
-  @childUpdate="updateTask"
-  @childCompleted="completeTask"
-   />
-   <Footer />
+  <div>
+    <NewTask @childNewTask="sendToStore" />
+    <div class="flex flex-col items-center container px-auto mx-auto">
+      <div
+        class="border rounded-lg px-6 py-2 w-fit inline-block mx-2 mt-16 mb-8 text-center ml-3 bg-green-100"
+      >
+        <p class="text-medium text-center text-gray-800">
+          📌 Total tasks: <strong>{{ taskArray.length }} </strong>
+        </p>
+      </div>
+    </div>
+    <TaskItem
+      v-for="(task, index) in taskArray"
+      :key="index"
+      :taskData="task"
+      @child-delete="deleteTask"
+      @childUpdate="updateTask"
+      @childCompleted="completeTask"
+    />
+    <Footer />
   </div>
-  
-
 </template>
 
 <script setup>
@@ -68,11 +75,8 @@ async function completeTask(id, boolean) {
   await taskStore.completeTask(id, boolean);
   getTasks();
 }
-
-
 </script>
-<style scoped>
-</style>
+<style scoped></style>
 
 <!-- 
 **Hints**

@@ -1,6 +1,6 @@
 <template>
 <div class=" bg-pink-300 ">
-    <div class="max-w-2xl mx-auto text-white py-10">
+    <div class="mb-0 max-w-2xl mx-auto text-white py-10">
         <div class="text-center">
             <h3 class="text-3xl mb-3"> Download our task app </h3>
             <p> Stay organized. All day, every day. </p>

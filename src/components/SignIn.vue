@@ -61,9 +61,9 @@
                       id="password"
                     />
                     <span
-                      class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
+                      class="z-10 h-full leading-snug font-normal text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 right-5 top-8 pr-3 py-3"
                     >
-                      <EyeIcon
+                      <EyeIcon 
                         v-if="hidePassword"
                         @click.prevent="hidePassword = !hidePassword"
                       />
