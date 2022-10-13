@@ -69,14 +69,28 @@
   <nav 
   class="bg-blue-200"
   :class="
-    clickBurger ? 'transition-all ease-out duration-500 h-16' : 'transition-all ease-in duration-500 h-0'
+    clickBurger ? 'transition-all ease-out duration-500 h-24' : 'transition-all ease-in duration-500 h-0'
     ">
     <ul
-    class="duration-300 ease-out"
+    class="duration-300 ease-out" 
     :class="clickBurger ? 'transition-all ease-out duration-500' : 'hidden' "
     >
-      <li>Home</li>
-      <li>Log Out</li>
+    <li class="pt-3">
+            <button
+              class="ml-3 inline-block py-1 px-5 mb-2 text-sm text-white bg-violet-400 focus:ring-violet-300 focus:ring-opacity-50 rounded-md"
+              @click=""
+            >
+              Home
+            </button>
+          </li>
+      <li class="pt-1">
+            <button
+              class="ml-3 inline-block py-1 px-4 text-sm text-white bg-violet-400 focus:ring-violet-300 focus:ring-opacity-50 rounded-md"
+              @click="signOut()"
+            >
+              Log out
+            </button>
+          </li>
     </ul>
   </nav>
 

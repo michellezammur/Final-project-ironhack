@@ -51,7 +51,7 @@ Tareas Diarias:
 
 Tareas Diarias:
 
-- logica menu hamburguesa
+- ✅ logica menu hamburguesa
 - ✅ ojo de sig in
 - ✅ design total task
 - ✅ nav-bar (tamaño)
