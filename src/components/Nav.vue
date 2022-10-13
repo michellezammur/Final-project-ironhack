@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex justify-between bg-white border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-800"
+    class="flex justify-between bg-white border-gray-200 px-2 sm:px-4 py-4 rounded "
   >
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <!-- logo -->
